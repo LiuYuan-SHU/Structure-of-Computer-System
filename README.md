@@ -62,4 +62,6 @@ I splited the code from laboratory manual into [method1](./2_Lib2/2.2/method1.cp
 
 ***Idea of Exercise***
 
-To avoid thread collisions that I can't deal with now, I choose to make each thread to handle one row to finishe this task.
+To avoid thread collisions that I can't deal with now, I choose to make each thread to handle one row to finishe this task. 
+
+To view all results, check [here](./2_Lib2/2.2/practice)
