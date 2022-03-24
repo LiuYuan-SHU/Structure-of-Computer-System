@@ -29,7 +29,11 @@
 
 ## Lab2
 
+> OpenMP Programming
+
 ### 2.1
+
+> Compilation and running of OpenMP program
 
 #### Reference 
 
