@@ -54,3 +54,12 @@
 		
 		View notes [here](./2_Lib2/2.1/Q1.cpp)
 
+### 2.2
+
+I splited the code from laboratory manual into [method1](./2_Lib2/2.2/method1.cpp) and [method2](./2_Lib2/2.2/method2.cpp), to use them to see the change of the result as the length of the matrix increases, please use `sh run_1.sh` and `sh run_2.sh` at [the directory](./2_Lib2/2.2). To visualize the difference between the two methods, take a look [here](./2_Lib2/2.2/result.xls)
+
+******
+
+***Idea of Exercise***
+
+To avoid thread collisions that I can't deal with now, I choose to make each thread to handle one row to finishe this task.
