@@ -62,19 +62,17 @@ I splited the code from laboratory manual into [method1](./2_Lib2/2.2/method1.cp
 
 ***Idea of Exercise***
 
-To avoid thread collisions that I can't deal with now, I choose to make each thread to handle one row to finishe this task. 
+To avoid thread collisions that I can't deal with now, I choose to make each thread to handle one row to finished this task. 
 
 To view all results, check [here](./2_Lib2/2.2/practice)
 
 ## Lab3
 
-1.	https://www.open-mpi.org/software/ompi/v1.6)
-
 ### 3.1
 
 #### Reference
 
-1.	[Download OpenMPI 1.6.5](
+1.	[Download OpenMPI 1.6.5](https://www.open-mpi.org/software/ompi/v1.6)
 
 #### Notes
 
@@ -85,7 +83,17 @@ To view all results, check [here](./2_Lib2/2.2/practice)
     At this step, may counter:
     +	`make *** no tragets specified and no makefile found. stop`
     +	`no rule to make target 'install'`
-    After read `README`, we can find `Building Open MPI` at Line 584(with `/make` in vim). Use command at Line 1133:
+    After read `README`, we can find `Building Open MPI` at Line 584(with `/make` in vim). 
+
+	First check environment:
+	```
+	# at directory openmpi-1.6.5
+	./configure
+
+	```
+	And install all needed components.
+
+	After that, use command at Line 1133:
     ```shell
     make all
     sudo make install
@@ -134,5 +142,21 @@ To view all results, check [here](./2_Lib2/2.2/practice)
 	
 	![image-20220502145721250](README.assets/Lib3.2_Result.png)
 
+## Lib4
+
+### Reference
+
+1.	[Download GotoBLAS2](https://www.tacc.utexas.edu/research-development/tacc-software/gotoblas2)
+2.	[Download HPL](http://www.netlib.org/benchmark/hpl/hpl-2.1.tar.gz)
+
+### Notes
+
+#### GotoBLAS2 install
+
+1.	Download and unzip the file
+2.	`make CC=gcc  BINARY=64 TARGET=NEHALEM`
+	![build finished](./README.assets/Lib4_GotoBLAS_build.png)
+
+####  HPL install
 
 
