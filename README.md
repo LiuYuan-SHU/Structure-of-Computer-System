@@ -65,3 +65,74 @@ I splited the code from laboratory manual into [method1](./2_Lib2/2.2/method1.cp
 To avoid thread collisions that I can't deal with now, I choose to make each thread to handle one row to finishe this task. 
 
 To view all results, check [here](./2_Lib2/2.2/practice)
+
+## Lab3
+
+1.	https://www.open-mpi.org/software/ompi/v1.6)
+
+### 3.1
+
+#### Reference
+
+1.	[Download OpenMPI 1.6.5](
+
+#### Notes
+
+1. Unzip the zip file *openmpi-1.6.5.tar.gz* with command `tar -xzvf openmpi-1.6.5.tar.gz` at directory `~/.local/share/applications`
+2. Get into the directory, `./configure --prefix=~/.local/share/applications/openmpi-1.6.5 >& configure.log`
+3. `make >& make.log`
+4. `make install`
+    At this step, may counter:
+    +	`make *** no tragets specified and no makefile found. stop`
+    +	`no rule to make target 'install'`
+    After read `README`, we can find `Building Open MPI` at Line 584(with `/make` in vim). Use command at Line 1133:
+    ```shell
+    make all
+    sudo make install
+    ```
+    Just solve the problem.
+5. Test necessary applications: 
+    ```shell
+    cd examples
+    make all
+    ```
+    For I've gotten all necessary applications, nothing more to do here.
+6. Use SSH to login other VMs, done in previous libs.
+
+### 3.2
+
+#### Notes
+
+1.	Create directories in remote VMs:
+
+	***run.sh***
+	```shell
+	# Check if there is a parameter exit
+	if [ -z $1 ]
+	then
+		echo "$0 < subdirname >"
+		echo "(e.g.) $0 ZSMPI"
+		exit
+	fi;
+	
+	# For me, my VMs' names are: Ubuntu1, Ubuntu2
+	# So the scipt is:
+	for m in 1 2
+	do
+		echo "rsh Ubuntu$m mkdir $1"
+		rsh Ubuntu$m mkdir $1
+	done
+	```
+	
+	Run file: `sh run.sh ~/TestSSH`, if the names of the VMs are wrong, failure messages are like:
+
+	![wrong Virtusl Machine name](README.assets/Lib3.2_WrongVMName.png)
+
+	Correct result:
+	
+	![Run Result](README.assets/Lib3.2_CorrectVMName.png)
+	
+	![image-20220502145721250](README.assets/Lib3.2_Result.png)
+
+
+
