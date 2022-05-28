@@ -20,6 +20,9 @@
 2. Generate own SSH key: `ssh-keygen -t rsa`
 3. Copy the public SSH key to another virtual machine so that we can visit it without password: `ssh-copy-id <User>@<ip>`
 4. Create nickname for virtual machines:
+
+   ***/.ssh/config***
+
    ```bash
    Host <HostNickName>
    HostName <HostIP>
@@ -89,7 +92,7 @@ To view all results, check [here](./2_Lib2/2.2/practice)
 	```
 	# at directory openmpi-1.6.5
 	./configure
-
+    
 	```
 	And install all needed components.
 
@@ -115,7 +118,7 @@ To view all results, check [here](./2_Lib2/2.2/practice)
 
 	***run.sh***
 	```shell
-	# Check if there is a parameter exit
+	# Check if there is a parameter exist
 	if [ -z $1 ]
 	then
 		echo "$0 < subdirname >"
@@ -124,7 +127,7 @@ To view all results, check [here](./2_Lib2/2.2/practice)
 	fi;
 	
 	# For me, my VMs' names are: Ubuntu1, Ubuntu2
-	# So the scipt is:
+	# So the script is:
 	for m in 1 2
 	do
 		echo "rsh Ubuntu$m mkdir $1"
@@ -158,5 +161,4 @@ To view all results, check [here](./2_Lib2/2.2/practice)
 	![build finished](./README.assets/Lib4_GotoBLAS_build.png)
 
 ####  HPL install
-
 
